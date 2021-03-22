@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "mateuscoury.github.io/app-toot-name/static/css/main.1c1db24b.chunk.css",
+    "main.js": "mateuscoury.github.io/app-toot-name/static/js/main.35d918c6.chunk.js",
+    "main.js.map": "mateuscoury.github.io/app-toot-name/static/js/main.35d918c6.chunk.js.map",
+    "runtime-main.js": "mateuscoury.github.io/app-toot-name/static/js/runtime-main.0260988f.js",
+    "runtime-main.js.map": "mateuscoury.github.io/app-toot-name/static/js/runtime-main.0260988f.js.map",
+    "static/js/2.1a0dc02d.chunk.js": "mateuscoury.github.io/app-toot-name/static/js/2.1a0dc02d.chunk.js",
+    "static/js/2.1a0dc02d.chunk.js.map": "mateuscoury.github.io/app-toot-name/static/js/2.1a0dc02d.chunk.js.map",
+    "index.html": "mateuscoury.github.io/app-toot-name/index.html",
+    "precache-manifest.7ab396f51434274b060f074e2131d650.js": "mateuscoury.github.io/app-toot-name/precache-manifest.7ab396f51434274b060f074e2131d650.js",
+    "service-worker.js": "mateuscoury.github.io/app-toot-name/service-worker.js",
+    "static/css/main.1c1db24b.chunk.css.map": "mateuscoury.github.io/app-toot-name/static/css/main.1c1db24b.chunk.css.map",
+    "static/js/2.1a0dc02d.chunk.js.LICENSE": "mateuscoury.github.io/app-toot-name/static/js/2.1a0dc02d.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0260988f.js",
+    "static/js/2.1a0dc02d.chunk.js",
+    "static/css/main.1c1db24b.chunk.css",
+    "static/js/main.35d918c6.chunk.js"
+  ]
+}
