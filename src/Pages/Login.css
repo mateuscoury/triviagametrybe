@@ -1,0 +1,67 @@
+#loginContainer {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  background-color: coral;
+  box-shadow: 5px 5px 5px rgb(71, 37, 24);
+  border-radius: 15px;
+}
+#loginContainer input {
+  margin: 10px 0;
+  outline: 0;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 20px;
+  width: 300px;
+  border-radius: 30px;
+  border: 0;
+}
+#loginContainer button {
+  margin: 10px 0;
+  outline: 0;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  background-color: burlywood;
+  padding: 20px;
+  width: 200px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all ease 0.4s;
+  border: 0;
+}
+#loginContainer button:hover {
+  background-color: black;
+  color: burlywood;
+}
+#loginContainer input:focus {
+  border: 2px solid blue;
+}
+#imgContainer {
+  transform: translateY(-50px);
+}
+#imgContainer img {
+  height: 150px;
+  width: auto;
+
+  transform: scale(0.3);
+  animation-name: pop;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes pop {
+  0% {
+    transform: scale(0.3);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

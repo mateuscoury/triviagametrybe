@@ -1,0 +1,28 @@
+#rankingContainer {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+#card {
+  border: 1px solid black;
+  border-radius: 30px;
+  width: 500px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#rankingContainer h1 {
+  width: 200px;
+  text-align: center;
+}
+#rankingContainer button {
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+#rankingContainer li {
+  margin-top: 50px;
+}

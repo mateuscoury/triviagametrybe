@@ -2,6 +2,7 @@ import React from 'react';
 import md5 from 'crypto-js/md5';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import './telaFeed.css';
 
 class TelaFeedback extends React.Component {
   constructor(props) {
@@ -10,7 +11,6 @@ class TelaFeedback extends React.Component {
     this.state = {
       gravatarEmail: '',
       name: '',
-
     };
 
     this.setHashedEmail = this.setHashedEmail.bind(this);
@@ -37,12 +37,12 @@ class TelaFeedback extends React.Component {
     return (
       <header>
         <img
-          data-testid="header-profile-picture"
-          src={ `https://www.gravatar.com/avatar/${gravatarEmail}` }
-          alt="seila"
+          data-testid='header-profile-picture'
+          src={`https://www.gravatar.com/avatar/${gravatarEmail}`}
+          alt='seila'
         />
-        <h1 data-testid="header-player-name">{name}</h1>
-        <p data-testid="header-score">{total}</p>
+        <h1 data-testid='header-player-name'>{name}</h1>
+        <p data-testid='header-score'>{total}</p>
       </header>
     );
   }

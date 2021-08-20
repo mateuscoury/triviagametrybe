@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import actionss from '../Actions/index';
 import TelaFeedback from '../Components/TelaFeedback';
 import CardMultipla from '../Components/CardMultipla';
+import './Jogo.css';
 
 class Jogo extends React.Component {
   componentDidMount() {
@@ -18,9 +19,9 @@ class Jogo extends React.Component {
 
     if (!array) return <p>Carregando...</p>;
     return (
-      <div>
+      <div id='gameContainer'>
         <TelaFeedback />
-        <CardMultipla history={ this.props } />
+        <CardMultipla history={this.props} />
       </div>
     );
   }
@@ -36,9 +37,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 Jogo.propTypes = {
   reqPerguntas: PropTypes.func.isRequired,
-  perguntas: PropTypes.arrayOf(
-    PropTypes.string,
-  ).isRequired,
+  perguntas: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Jogo);

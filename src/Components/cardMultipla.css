@@ -1,0 +1,26 @@
+#cardContainer {
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  border-radius: 20px;
+  margin-top: 200px;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+}
+#cardContainer button {
+  margin: 10px 20px;
+  padding: 10px 0;
+  outline: 0;
+  cursor: pointer;
+  font-size: large;
+  font-weight: 700;
+  width: 300px;
+  border-radius: 30px;
+  transform: scale(0.8);
+  transition: all ease 0.3s;
+}
+#cardContainer button:hover {
+  transform: scale(1);
+}

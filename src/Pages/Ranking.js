@@ -2,15 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { timerAction } from '../Actions';
+import './Ranking.css';
 
 class Ranking extends React.Component {
   renderList(p, index) {
     const { name, score, picture } = p;
     return (
-      <li className="rank-list">
-        <img src={ picture } alt={ name } />
-        <p data-testid={ `player-name-${index}` }>{ name }</p>
-        <p data-testid={ `player-score-${index}` }>{ score }</p>
+      <li className='rank-list'>
+        <img src={picture} alt={name} />
+        <p data-testid={`player-name-${index}`}>{name}</p>
+        <p data-testid={`player-score-${index}`}>{score}</p>
       </li>
     );
   }
@@ -20,24 +21,26 @@ class Ranking extends React.Component {
     const { ajusta, history } = this.props;
     console.log(ranking);
     return (
-      <div>
-        <h1 data-testid="ranking-title">Ranking</h1>
-        <button
-          type="button"
-          data-testid="btn-go-home"
-          onClick={ () => {
-            const TIMER = 30;
-            ajusta(TIMER);
-            history.push('/');
-          } }
-        >
-          Jogar Novamente
-        </button>
-        <ul>
-          { ranking
-            .sort((a, b) => b.score - a.score)
-            .map((p, index) => this.renderList(p, index)) }
-        </ul>
+      <div id='rankingContainer'>
+        <div id='card'>
+          <h1 data-testid='ranking-title'>Ranking</h1>
+          <button
+            type='button'
+            data-testid='btn-go-home'
+            onClick={() => {
+              const TIMER = 30;
+              ajusta(TIMER);
+              history.push('/');
+            }}
+          >
+            Jogar Novamente
+          </button>
+          <ul>
+            {ranking
+              .sort((a, b) => b.score - a.score)
+              .map((p, index) => this.renderList(p, index))}
+          </ul>
+        </div>
       </div>
     );
   }

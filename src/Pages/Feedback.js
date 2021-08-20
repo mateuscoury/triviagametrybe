@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import md5 from 'crypto-js/md5';
 import { timerAction } from '../Actions';
+import './feedbackFinal.css';
 
 class FeedbackScreen extends React.Component {
   constructor(props) {
@@ -11,7 +12,6 @@ class FeedbackScreen extends React.Component {
     this.state = {
       gravatarEmail: '',
       name: '',
-
     };
 
     this.setHashedEmail = this.setHashedEmail.bind(this);
@@ -60,40 +60,42 @@ class FeedbackScreen extends React.Component {
     const { total, totalQuestions, history, ajusta } = this.props;
     const { gravatarEmail, name } = this.state;
     return (
-      <div>
+      <div id='containerFeed'>
         <header>
           <img
-            data-testid="header-profile-picture"
-            src={ `https://www.gravatar.com/avatar/${gravatarEmail}` }
-            alt="seila"
+            data-testid='header-profile-picture'
+            src={`https://www.gravatar.com/avatar/${gravatarEmail}`}
+            alt='seila'
           />
-          <h1 data-testid="header-player-name">{ name }</h1>
-          <p data-testid="feedback-total-score">{ total }</p>
-          <p data-testid="header-score">{ total }</p>
-          <p data-testid="feedback-total-question">{ totalQuestions }</p>
+          <h1 data-testid='header-player-name'>{name}</h1>
+          <p data-testid='feedback-total-score'>{total}</p>
+          <p data-testid='header-score'>{total}</p>
+          <p data-testid='feedback-total-question'>{totalQuestions}</p>
         </header>
-        <h1 data-testid="feedback-text">{ this.feedBack(totalQuestions) }</h1>
-        <button
-          type="button"
-          data-testid="btn-play-again"
-          onClick={ () => {
-            const TIMER = 30;
-            ajusta(TIMER);
-            history.push('/');
-          } }
-        >
-          Jogar Novamente
-        </button>
-        <button
-          type="button"
-          data-testid="btn-ranking"
-          onClick={ () => {
-            this.setRank();
-            history.push('/ranking');
-          } }
-        >
-          Ranking
-        </button>
+        <div id='returnContainer'>
+          <h1 data-testid='feedback-text'>{this.feedBack(totalQuestions)}</h1>
+          <button
+            type='button'
+            data-testid='btn-play-again'
+            onClick={() => {
+              const TIMER = 30;
+              ajusta(TIMER);
+              history.push('/');
+            }}
+          >
+            Jogar Novamente
+          </button>
+          <button
+            type='button'
+            data-testid='btn-ranking'
+            onClick={() => {
+              this.setRank();
+              history.push('/ranking');
+            }}
+          >
+            Ranking
+          </button>
+        </div>
       </div>
     );
   }

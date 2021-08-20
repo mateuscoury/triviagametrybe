@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import actionss, { remountTimer, timerAction, totalAction } from '../Actions/index';
 import '../css/acertoErrocss.css';
 import Timer from './Timer';
+import './cardMultipla.css';
 
 class CardMultipla extends React.Component {
   constructor() {
@@ -66,7 +67,7 @@ class CardMultipla extends React.Component {
     const BASIS_SCORE = 10;
     const ONE = 1;
 
-    const SCORE = BASIS_SCORE + (countTimer);
+    const SCORE = BASIS_SCORE + countTimer;
     this.saveToLocalStorage(acertos + SCORE, ONE);
     if (!click) {
       this.setState((state) => ({
@@ -129,11 +130,7 @@ class CardMultipla extends React.Component {
 
   renderBtn() {
     return (
-      <button
-        type="button"
-        data-testid="btn-next"
-        onClick={ () => this.nextButton() }
-      >
+      <button type='button' data-testid='btn-next' onClick={() => this.nextButton()}>
         {' '}
         Proximo
       </button>
@@ -149,45 +146,46 @@ class CardMultipla extends React.Component {
     const THREE = 3;
 
     return (
-
-      <div>
+      <div id='cardContainer'>
         <Timer
-          key={ forceKey }
-          callback={ this.botaoerradoPoints }
-          dis={ this.disableButtons }
+          key={forceKey}
+          callback={this.botaoerradoPoints}
+          dis={this.disableButtons}
         />
-        <h1 data-testid="question-category">{ arr[indice].category }</h1>
-        <p data-testid="question-text">{ arr[indice].question }</p>
-        { answersToDisplay[indice] && answersToDisplay[indice].map((answer, i) => {
-          if (answer === correctAnswers[indice]) {
+        <h1 data-testid='question-category'>{arr[indice].category}</h1>
+        <p data-testid='question-text'>{arr[indice].question}</p>
+        {answersToDisplay[indice] &&
+          answersToDisplay[indice].map((answer, i) => {
+            if (answer === correctAnswers[indice]) {
+              return (
+                <button
+                  type='button'
+                  className={green}
+                  onClick={(e) => this.botaoacertoPoints(e)}
+                  key={answer}
+                  disabled={disable}
+                  data-testid='correct-answer'
+                >
+                  {answer}
+                </button>
+              );
+            }
             return (
               <button
-                type="button"
-                className={ green }
-                onClick={ (e) => this.botaoacertoPoints(e) }
-                key={ answer }
-                disabled={ disable }
-                data-testid="correct-answer"
+                type='button'
+                className={red}
+                onClick={(e) => this.botaoerradoPoints(e)}
+                key={answer}
+                disabled={disable}
+                data-testid={`wrong-answer${i <= TWO ? i : THREE}`}
               >
-                { answer }
-              </button>);
-          }
-          return (
-            <button
-              type="button"
-              className={ red }
-              onClick={ (e) => this.botaoerradoPoints(e) }
-              key={ answer }
-              disabled={ disable }
-              data-testid={ `wrong-answer${i <= TWO ? i : THREE}` }
-            >
-              { answer }
-            </button>);
-        }) }
+                {answer}
+              </button>
+            );
+          })}
 
-        { (click || countTimer === 0) && this.renderBtn() }
+        {(click || countTimer === 0) && this.renderBtn()}
       </div>
-
     );
   }
 }

@@ -1,0 +1,30 @@
+#containerFeed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+#returnContainer {
+  width: 700px;
+  margin-top: 50px;
+  text-align: center;
+  border-radius: 30px;
+  border: 2px solid black;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+#returnContainer button {
+  margin: 10px 20px;
+  padding: 10px 0;
+  outline: 0;
+  cursor: pointer;
+  font-size: large;
+  font-weight: 700;
+  width: 300px;
+  border-radius: 30px;
+  transform: scale(0.8);
+  transition: all ease 0.3s;
+}
